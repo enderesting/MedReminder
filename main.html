@@ -1,0 +1,108 @@
+<!-- accordions to store med info?-->
+<!--examples of "more info" menus we could use 
+    https://www.w3schools.com/howto/howto_js_sidenav.asp
+    https://www.w3schools.com/howto/howto_js_fullscreen_overlay.asp 
+
+    choose betweenthese two
+    https://www.w3schools.com/howto/howto_css_modals.asp
+    https://www.w3schools.com/howto/howto_js_collapsible.asp
+
+    calendar
+    https://www.w3schools.com/howto/howto_css_calendar.asp
+
+    todo list
+    https://www.w3schools.com/howto/howto_js_todolist.asp
+
+    overlay effect (for calendar popout?)
+    https://www.w3schools.com/howto/howto_css_overlay.asp
+-->
+
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>My TODO List</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"> 
+    </head>
+
+    <div id = "app">
+        <body>
+            <header>
+                <h1>Monday 3rd April</h1>
+                <button onclick= "calendarToggle()"> Select Date 
+                                    <i class="arrow down"></i>
+                                </button>
+                <!-- <p>Down arrow: <i class="arrow down"></i></p> -->
+
+                <!-- calendar embbed -->
+                <!-- swap into calendar.html -->
+
+            </header>
+    
+            <main>
+                <iframe id="calendar"
+                title="Inline Frame Example"
+                src="calendar.html">
+                </iframe>
+
+                <div id="controls">
+                    <button class="control-button" class="tooltip">
+                        <i class="fa fa-plus"></i>
+                        <span class="tooltiptext">add reminder</span>
+                    </button>
+                    <button class="control-button" class="tooltip">
+                        <i class="fa fa-question"></i>
+                        <span class="tooltiptext">help</span>
+                    </button>
+                </div>
+
+                <div id="reminders-list">
+
+                    <ul>
+                        <li>
+                            <label class="reminder">
+                                <input type="checkbox">
+                                Teehee & Hoo hoo
+                                <i class="fa fa-info-circle"></i>
+                            </label class="reminder">
+                        </li>
+                        <li>
+                            <label class="reminder">
+                                <input type="checkbox">
+                                Go die
+                                <i class="fa fa-info-circle"></i>
+                            </label class="reminder">
+                        </li>
+                        <li>
+                            <label class="reminder">
+                                <input type="checkbox">
+                                Go die
+                                <i class="fa fa-info-circle"></i>
+                            </label class="reminder">
+                        </li>
+                        <li>
+                            <label class="reminder">
+                                <input type="checkbox">
+                                Go die
+                                <i class="fa fa-info-circle"></i>
+                            </label class="reminder">
+                        </li>
+                        <li>
+                            <label class="reminder">
+                                <input type="checkbox">
+                                Go die
+                                <i class="fa fa-info-circle"></i>
+                            </label class="reminder">
+                        </li>
+                    </ul>
+                </div>
+
+            </main>
+        </body>
+
+        <script src="behavior.js"></script> 
+    </div>
+
+</html>
