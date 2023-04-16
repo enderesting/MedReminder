@@ -29,8 +29,8 @@
 
     <div id = "app">
         <body>
-            <header>
-                <h1 class="datename">Monday 3rd of April</h1>
+            <header id="header">
+                <h1>Monday 3rd April</h1>
                 <button onclick= "calendarToggle()"> Select Date 
                                     <i class="arrow down"></i>
                                 </button>
@@ -48,7 +48,7 @@
                 </iframe> -->
 
                 <div id="controls">
-                    <button class="control-button" class="tooltip">
+                    <button onclick="scanner()" class="control-button" class="tooltip">
                         <i class="fa fa-plus"></i>
                         <span class="tooltiptext">add reminder</span>
                     </button>
@@ -60,7 +60,7 @@
 
                 <div id="reminders-list">
 
-                    <ul>
+                    <ul id="ul">
                         <li>
                             <label class="reminder">
                                 <input type="checkbox">
@@ -152,12 +152,20 @@
                         <li>31</li>
                     </ul>                
                 </div>
+                <div id="scanner">
+                    <img src="scanning.png" alt="scanning" width="300" height="300">
+                    <button onclick="add_reminder()" class="control-button" class="tooltip">
+                        <i class="fa fa-check"></i>
+                        <span class="tooltiptext">confirm</span>
+                    </button>
+                    <button onclick="scanner()" class="control-button" class="tooltip">
+                        <i class="fa fa-times"></i>
+                        <span class="tooltiptext">cancel</span>
+                    </button>
+                </div>
             </main>
         </body>
 
-        <script src="behavior.js"></script> 
+    <script src="behavior.js"></script>
     </div>
-
-
-
 </html>
