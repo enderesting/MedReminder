@@ -35,6 +35,23 @@ function scanner(){
 
 function add_reminder() {
     scanner();
-    let node = document.createTextNode("Go die.");
+    let text = document.createTextNode("Go die.");
+    let input = document.createElement("INPUT");
+    input.setAttribute("type", "checkbox");
+    let i = document.createElement("i");
+    i.setAttribute("class", "fa fa-info-circle");
+    let button = document.createElement("button");
+    button.appendChild(i);
 
+    let label = document.createElement("label");
+    label.appendChild(input);
+    label.appendChild(text);
+    label.appendChild(button);
+    label.setAttribute("class", "reminder");
+
+    let li = document.createElement("li");
+    li.appendChild(label);
+
+    let ul = document.getElementById("ul");
+    ul.appendChild(li);
 }
