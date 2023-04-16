@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Info</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            font-size: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+        }
+
+        .main-fields p {
+            border-bottom: none;
+        }
+
+        #main-border {
+            border: 4px solid #000000;
+            padding: 10px;
+        }
+
+        #secondary-border {
+            border: 2px solid #000000;
+            padding: 5px;
+        }
+
+        p.patient {
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+
+        p.under-patient {
+            margin-top: 0px;
+            padding-top: 0px;
+            font-size: 14px;
+        }
+
+        p.doctor {
+            text-align: left;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="main-border">
+            <div id="secondary-border">
+                <p>01/01/1990</p>
+                <p class="patient">John Real Guy Doe</p>
+                <p class="under-patient">Age: 30 Gender: M</p>
+                <p>Address: 123 Unicorn Street</p>
+            </div>
+            <div class="main-border">
+                <p>Medication: Prozac</p>
+                <p>Dosage: 1 pills in the AM</p>
+                <p>Quantity: 20 pills</p>
+                <p>Refills: 2 remaining</p>
+
+                <p class="doctor">Doctor: Real Doc, MD | License Number: 1234-567</p>
+            </div>
+        </div>
+        <button class="control-button" class="tooltip">
+            <i class="fa fa-times"></i>
+        </button>
+    </div>
+</body>
+
+</html>
