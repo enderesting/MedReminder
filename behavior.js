@@ -11,3 +11,7 @@ function calendarToggle(){
     }
     // alert("AAA");
 }
+
+function selectDate(){
+    alert("teehee");
+}

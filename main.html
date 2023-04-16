@@ -21,7 +21,7 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <title>My TODO List</title>
+        <title>MedReminder</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"> 
@@ -42,10 +42,10 @@
             </header>
     
             <main>
-                <iframe id="calendar"
+                <!-- <iframe id="calendar"
                 title="Inline Frame Example"
                 src="calendar.html">
-                </iframe>
+                </iframe> -->
 
                 <div id="controls">
                     <button class="control-button" class="tooltip">
@@ -64,45 +64,100 @@
                         <li>
                             <label class="reminder">
                                 <input type="checkbox">
+                                
                                 Teehee & Hoo hoo
-                                <i class="fa fa-info-circle"></i>
+
+                                <button>
+                                    <i class="fa fa-info-circle"></i>
+                                </button>
+                            </label class="reminder">
+                        </li>
+                        
+                        <li>
+                            <label class="reminder">
+                                <input type="checkbox">
+                                Teehee & Hoo hoo
+                                <button>
+                                    <i class="fa fa-info-circle"></i>
+                                </button>
                             </label class="reminder">
                         </li>
                         <li>
                             <label class="reminder">
                                 <input type="checkbox">
                                 Go die
-                                <i class="fa fa-info-circle"></i>
+                                <button>
+                                    <i class="fa fa-info-circle"></i>
+                                </button>
                             </label class="reminder">
                         </li>
-                        <li>
-                            <label class="reminder">
-                                <input type="checkbox">
-                                Go die
-                                <i class="fa fa-info-circle"></i>
-                            </label class="reminder">
-                        </li>
-                        <li>
-                            <label class="reminder">
-                                <input type="checkbox">
-                                Go die
-                                <i class="fa fa-info-circle"></i>
-                            </label class="reminder">
-                        </li>
-                        <li>
-                            <label class="reminder">
-                                <input type="checkbox">
-                                Go die
-                                <i class="fa fa-info-circle"></i>
-                            </label class="reminder">
-                        </li>
+                    
                     </ul>
                 </div>
-
+                <div id="calendar">
+                    <div class="month">    
+                        <ul>
+                        <li>
+                            April 2023</span>
+                        </li>
+                        </ul>
+                    </div>
+                  
+                    <ul class="weekdays">
+                        <li>Mo</li>
+                        <li>Tu</li>
+                        <li>We</li>
+                        <li>Th</li>
+                        <li>Fr</li>
+                        <li>Sa</li>
+                        <li>Su</li>
+                    </ul>
+                    
+                    <ul class="days">  
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li onclick= "selectDate">8</li>
+                        <li>9</li>
+                        <li><span class="active">10</span></li>
+                        <li>11</li>
+                        <li>12</li>
+                        <li>13</li>
+                        <li>14</li>
+                        <li>15</li>
+                        <li>16</li>
+                        <li>17</li>
+                        <li>18</li>
+                        <li>19</li>
+                        <li>20</li>
+                        <li>21</li>
+                        <li>22</li>
+                        <li>23</li>
+                        <li>24</li>
+                        <li>25</li>
+                        <li>26</li>
+                        <li>27</li>
+                        <li>28</li>
+                        <li>29</li>
+                        <li>30</li>
+                        <li>31</li>
+                    </ul>                
+                </div>
             </main>
         </body>
 
         <script src="behavior.js"></script> 
     </div>
+
+
 
 </html>
