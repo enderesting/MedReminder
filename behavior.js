@@ -4,12 +4,12 @@ var controls =  document.getElementById("controls");
 var header =  document.getElementById("header");
 
 function calendarToggle(){
-    if (calendar.style.display == "none"){
-        calendar.style.display = "block";
-        reminders.style.display = "none";
-    }else{
+    if (calendar.style.display == "block"){
         calendar.style.display = "none";
         reminders.style.display = "block";
+    }else{
+        calendar.style.display = "block";
+        reminders.style.display = "none";
     }
     // alert("AAA");
 }
@@ -19,7 +19,7 @@ function selectDate(num){
     const dayList = document.querySelector('.days');
     const days = dayList.querySelectorAll('li');
     let datename = document.querySelector('.datename');
-    console.log(dayList);
+    // console.log(dayList);
     for(var i = 0; i < days.length; i++){
         const li = days[i];
         const span = li.querySelector('span');
@@ -52,20 +52,21 @@ function selectDate(num){
 
 function scanner(){
     let scanner = document.getElementById("scanner");
-    if (scanner.style.display == "none"){
-        scanner.style.display = "block";
-        header.style.display = "none";
-        reminders.style.display = "none";
-        controls.style.display = "none";
-    }else{
+    if (scanner.style.display == "block"){
         scanner.style.display = "none";
         header.style.display = "block";
         reminders.style.display = "block";
         controls.style.display = "block";
+    }else{
+        scanner.style.display = "block";
+        header.style.display = "none";
+        reminders.style.display = "none";
+        controls.style.display = "none";
     }
 }
 
 function add_reminder() {
+    // alert('boo');
     scanner();
     let text = document.createTextNode("Go die.");
     let input = document.createElement("INPUT");

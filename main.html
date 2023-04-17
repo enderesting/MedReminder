@@ -42,11 +42,6 @@
             </header>
     
             <main>
-                <!-- <iframe id="calendar"
-                title="Inline Frame Example"
-                src="calendar.html">
-                </iframe> -->
-
                 <div id="controls">
                     <button onclick="scanner()" class="control-button" class="tooltip">
                         <i class="fa fa-plus"></i>
@@ -152,18 +147,23 @@
                         <li>31</li>
                     </ul>                
                 </div>
-                <div id="scanner">
-                    <img src="scanning.png" alt="scanning" width="300" height="300">
-                    <button onclick="add_reminder()" class="control-button" class="tooltip">
+
+            <div id="scanner">
+                <img src="scanning.png" alt="scanning" width="400" height="400" class="scannerimg">
+                <br>
+                <div class="scanner-buttons">
+                    <button onclick="add_reminder()" class="control-button">
                         <i class="fa fa-check"></i>
-                        <span class="tooltiptext">confirm</span>
+                        <!-- <span class="tooltiptext">confirm</span> -->
                     </button>
-                    <button onclick="scanner()" class="control-button" class="tooltip">
+                    <button onclick="scanner()" class="control-button">
                         <i class="fa fa-times"></i>
-                        <span class="tooltiptext">cancel</span>
+                        <!-- <span class="tooltiptext">cancel</span> -->
                     </button>
                 </div>
+            </div>
             </main>
+
         </body>
 
     <script src="behavior.js"></script>
