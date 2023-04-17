@@ -19,153 +19,110 @@
 
 <!doctype html>
 <html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <title>MedReminder</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"> 
-    </head>
 
-    <div id = "app">
-        <body>
-            <header id="header">
-                <h1>Monday 3rd April</h1>
-                <button onclick= "calendarToggle()"> Select Date 
-                                    <i class="arrow down"></i>
-                                </button>
-                <!-- <p>Down arrow: <i class="arrow down"></i></p> -->
+<head>
+    <meta charset="UTF-8">
+    <title>MedReminder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+</head>
 
-                <!-- calendar embbed -->
-                <!-- swap into calendar.html -->
+<div id="app">
 
-            </header>
-    
-            <main>
-                <div id="controls">
-                    <button onclick="scanner()" class="control-button" class="tooltip">
-                        <i class="fa fa-plus"></i>
-                        <span class="tooltiptext">add reminder</span>
-                    </button>
-                    <button class="control-button" class="tooltip">
-                        <i class="fa fa-question"></i>
-                        <span class="tooltiptext">help</span>
-                    </button>
-                </div>
+    <body>
+        <header id="header">
+            <h1 class="datename">Monday 3rd April</h1>
+            <button onclick="calendarToggle()"> Select Date
+                <i class="arrow down"></i>
+            </button>
+            <!-- <p>Down arrow: <i class="arrow down"></i></p> -->
 
-                <div id="reminders-list">
+            <!-- calendar embbed -->
+            <!-- swap into calendar.html -->
 
-                    <ul id="ul">
-                        <li>
-                            <label class="reminder">
-                                <input type="checkbox">
-                                
-                                Teehee & Hoo hoo
+        </header>
 
-                                <button>
-                                    <i class="fa fa-info-circle"></i>
-                                </button>
-                            </label class="reminder">
-                        </li>
-                        
-                        <li>
-                            <label class="reminder">
-                                <input type="checkbox">
-                                Teehee & Hoo hoo
-                                <button>
-                                    <i class="fa fa-info-circle"></i>
-                                </button>
-                            </label class="reminder">
-                        </li>
-                        <li>
-                            <label class="reminder">
-                                <input type="checkbox">
-                                Go die
-                                <button>
-                                    <i class="fa fa-info-circle"></i>
-                                </button>
-                            </label class="reminder">
-                        </li>
-                    
-                    </ul>
-                </div>
-                <div id="calendar">
-                    <div class="month">    
-                        <ul>
+        <main>
+            <div id="controls">
+                <button onclick="go_to_scanner()" class="control-button" class="tooltip">
+                    <i class="fa fa-plus"></i>
+                    <span class="tooltiptext">add reminder</span>
+                </button>
+                <button class="control-button" class="tooltip">
+                    <i class="fa fa-question"></i>
+                    <span class="tooltiptext">help</span>
+                </button>
+            </div>
+
+            <div id="reminders-list">
+
+                <ul id="ul">
+                </ul>
+            </div>
+            <div id="calendar">
+                <div class="month">
+                    <ul>
                         <li>
                             April 2023</span>
                         </li>
-                        </ul>
-                    </div>
-                  
-                    <ul class="weekdays">
-                        <li>Mo</li>
-                        <li>Tu</li>
-                        <li>We</li>
-                        <li>Th</li>
-                        <li>Fr</li>
-                        <li>Sa</li>
-                        <li>Su</li>
                     </ul>
-                    
-                    <ul class="days">  
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li onclick= "selectDate(4)"><span class="active">4</span></li>
-                        <li>5</li>
-                        <li>6</li>
-                        <li>7</li>
-                        <li onclick= "selectDate(8)"><span class="">8</span></li>
-                        <li>9</li>
-                        <li>10</li>
-                        <li>11</li>
-                        <li>12</li>
-                        <li>13</li>
-                        <li>14</li>
-                        <li>15</li>
-                        <li>16</li>
-                        <li>17</li>
-                        <li>18</li>
-                        <li>19</li>
-                        <li>20</li>
-                        <li>21</li>
-                        <li>22</li>
-                        <li>23</li>
-                        <li>24</li>
-                        <li>25</li>
-                        <li>26</li>
-                        <li>27</li>
-                        <li>28</li>
-                        <li>29</li>
-                        <li>30</li>
-                        <li>31</li>
-                    </ul>                
                 </div>
 
-            <div id="scanner">
-                <img src="scanning.png" alt="scanning" width="400" height="400" class="scannerimg">
-                <br>
-                <div class="scanner-buttons">
-                    <button onclick="add_reminder()" class="control-button">
-                        <i class="fa fa-check"></i>
-                        <!-- <span class="tooltiptext">confirm</span> -->
-                    </button>
-                    <button onclick="scanner()" class="control-button">
-                        <i class="fa fa-times"></i>
-                        <!-- <span class="tooltiptext">cancel</span> -->
-                    </button>
-                </div>
+                <ul class="weekdays">
+                    <li>Mo</li>
+                    <li>Tu</li>
+                    <li>We</li>
+                    <li>Th</li>
+                    <li>Fr</li>
+                    <li>Sa</li>
+                    <li>Su</li>
+                </ul>
+
+                <ul class="days">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li onclick="selectDate(4)"><span class="active">4</span></li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li onclick="selectDate(8)"><span class="">8</span></li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li>16</li>
+                    <li>17</li>
+                    <li>18</li>
+                    <li>19</li>
+                    <li>20</li>
+                    <li>21</li>
+                    <li>22</li>
+                    <li>23</li>
+                    <li>24</li>
+                    <li>25</li>
+                    <li>26</li>
+                    <li>27</li>
+                    <li>28</li>
+                    <li>29</li>
+                    <li>30</li>
+                    <li>31</li>
+                </ul>
             </div>
-            </main>
+        </main>
 
-        </body>
+    </body>
 
     <script src="behavior.js"></script>
-    </div>
+</div>
+
 </html>

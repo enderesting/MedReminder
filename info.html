@@ -25,9 +25,11 @@
         #main-border {
             border: 4px solid #000000;
             padding: 10px;
+            background-color: blanchedalmond;
         }
 
         #secondary-border {
+            background-color: rgb(184, 120, 162);
             border: 2px solid #000000;
             padding: 5px;
         }
@@ -45,6 +47,7 @@
 
         p.doctor {
             text-align: left;
+            padding-top: 10px;
             padding-bottom: 0px;
             margin-bottom: 0px;
         }
@@ -55,24 +58,25 @@
     <div id="app">
         <div id="main-border">
             <div id="secondary-border">
-                <p>01/01/1990</p>
-                <p class="patient">John Real Guy Doe</p>
-                <p class="under-patient">Age: 30 Gender: M</p>
-                <p>Address: 123 Unicorn Street</p>
+                <p><b>01/01/1990</b></p>
+                <p class="patient"><b>Name:</b> John Real Guy Doe</p>
+                <p class="under-patient"><b>Age:</b> 30 <b>Gender:</b> M</p>
+                <p><b>Address:</b> 123 Unicorn Street</p>
             </div>
             <div class="main-border">
-                <p>Medication: Prozac</p>
-                <p>Dosage: 1 pills in the AM</p>
-                <p>Quantity: 20 pills</p>
-                <p>Refills: 2 remaining</p>
+                <p><b>Medication:</b> Prozac</p>
+                <p><b>Dosage:</b> 1 pills in the AM</p>
+                <p><b>Quantity:</b> 20 pills</p>
+                <p><b>Refills:</b> 2 remaining</p>
 
-                <p class="doctor">Doctor: Real Doc, MD | License Number: 1234-567</p>
+                <p class="doctor"><b>Doctor:</b> Real Doc, MD | License Number: 1234-567</p>
             </div>
         </div>
-        <button class="control-button" class="tooltip">
+        <button onclick="go_to_main()" class="control-button" class="tooltip">
             <i class="fa fa-times"></i>
         </button>
     </div>
 </body>
+<script src="behavior.js"></script>
 
 </html>
