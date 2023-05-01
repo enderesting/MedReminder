@@ -2,6 +2,7 @@ var calendar = document.getElementById("calendar");
 var reminders = document.getElementById("reminders-list");
 var controls = document.getElementById("controls");
 var header = document.getElementById("header");
+var datename = document.querySelector('.datename');
 window.onload = function () {
     if (!("first" in localStorage) && window.location.href == "main.html") {
         localStorage.removeItem("list");
@@ -25,7 +26,7 @@ function selectDate(num) {
     //loop through the list elements
     const dayList = document.querySelector('.days');
     const days = dayList.querySelectorAll('li');
-    let datename = document.querySelector('.datename');
+    // let datename = document.querySelector('.datename');
     // console.log(dayList);
     for (var i = 0; i < days.length; i++) {
         const li = days[i];
@@ -44,7 +45,7 @@ function selectDate(num) {
         // console.log('Present day:', presentDay);
         presentDay.classList.add('active');
         pickUpDay.classList.remove('active');
-        datename.textContent = 'Monday 3rd of April';
+        datename.textContent = 'Monday 4th of April';
         // console.log('Present day:', presentDay);
     }
 
@@ -55,6 +56,7 @@ function selectDate(num) {
         datename.textContent = 'Saturday 8th of April';
         // console.log('Pick up day:', pickUpDay);
     }
+    load_list();
 }
 
 function scanner() {
@@ -78,8 +80,17 @@ function go_to_scanner() {
 }
 
 function load_list() {
-    document.getElementById("ul").innerHTML = localStorage.getItem("list");
+    if (datename.textContent == 'Saturday 8th of April'){
+        document.getElementById("ul").innerHTML = localStorage.getItem("future_list");
+    }else{
+        document.getElementById("ul").innerHTML = localStorage.getItem("list");
+    }
 }
+
+// function load_future_list() {
+//     add_reminder('Refill Prozac');
+//     document.getElementById("ul").innerHTML = localStorage.getItem("list");
+// }
 
 function go_to_info() {
     localStorage.setItem("list", document.getElementById("ul").innerHTML);
@@ -90,11 +101,17 @@ function go_to_main() {
     window.location.href = "main.html";
 }
 
-function add_reminder() {
+function add_med_reminder(str){
+    add_reminder(str);
+    window.location.href = "main.html";
+}
+
+function add_reminder(str) {
 
     let reminders_list = localStorage.getItem("list");
 
-    let text = document.createTextNode("Go die.");
+    // let text = document.createTextNode("Take Prozac");
+    let text = document.createTextNode(str);
     let input = document.createElement("INPUT");
     input.setAttribute("type", "checkbox");
     let i = document.createElement("i");
@@ -117,7 +134,14 @@ function add_reminder() {
     let final = reminders_list + ul.innerHTML;
 
     localStorage.setItem("list", final);
-    window.location.href = "main.html";
+    // window.location.href = "main.html";
+}
+
+function clear_list(){
+    if (confirm("You are about to delete all reminders. Are you sure?")) {
+        localStorage.clear();
+        load_list();
+    }
 }
 
 function cancel_reminder() {

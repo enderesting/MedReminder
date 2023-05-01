@@ -32,9 +32,9 @@
 
     <body>
         <header id="header">
-            <h1 class="datename">Monday 3rd April</h1>
-            <button onclick="calendarToggle()"> Select Date
-                <i class="arrow down"></i>
+            <h1 class="datename">Monday 4th of April</h1>
+            <button onclick="calendarToggle()" style="width:100px;height:40px;">
+                <i class="arrow down" style="width:20px;height:20px;" ></i>
             </button>
             <!-- <p>Down arrow: <i class="arrow down"></i></p> -->
 
@@ -49,17 +49,17 @@
                     <i class="fa fa-plus"></i>
                     <span class="tooltiptext">add reminder</span>
                 </button>
-                <button class="control-button" class="tooltip">
-                    <i class="fa fa-question"></i>
-                    <span class="tooltiptext">help</span>
+                <button onclick="clear_list()" class="control-button" class="tooltip">
+                    <i class=" 	fa fa-trash"></i>
+                    <span class="tooltiptext">clear list</span>
                 </button>
             </div>
 
             <div id="reminders-list">
-
                 <ul id="ul">
                 </ul>
             </div>
+
             <div id="calendar">
                 <div class="month">
                     <ul>
@@ -69,7 +69,11 @@
                     </ul>
                 </div>
 
-                <ul class="weekdays">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                
+                </div>
+                <!-- <ul class="weekdays">
                     <li>Mo</li>
                     <li>Tu</li>
                     <li>We</li>
@@ -116,7 +120,7 @@
                     <li>29</li>
                     <li>30</li>
                     <li>31</li>
-                </ul>
+                </ul> -->
             </div>
         </main>
 

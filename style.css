@@ -6,13 +6,12 @@ input{
     height: 30px;
     accent-color: rgb(102, 19, 67);
 }
-/* .reminder button{
-    width:40px;
-    height: 40px;
-    background-color: red;
-} */
+p{
+    font-size: xx-large;
+}
+
 #app {
-    /* background-color:blue; */
+    background-color: blanchedalmond;
     width: 500px;
     height: 500px;
     top: 40%;
@@ -20,6 +19,8 @@ input{
     position: absolute;
     margin-top: -200px;
     margin-left: -250px;
+    border-radius: 50px;
+
 }
 
 header{
@@ -28,6 +29,25 @@ header{
     width: 100%;
     position:absolute;
     text-align: center;
+    border-radius: 50px 50px 0px  0px;
+    /* clip-path: inset(0 round 50px); */
+}
+
+/* controls the date */
+.datename{
+    margin: 15px 0px;
+}
+
+/* ARROW */
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }
 
 main{
@@ -38,10 +58,24 @@ main{
     /* overflow-y: scroll; */
 }
 
+#info{
+    /* font-size: xx-large; */
+    /* background-color:red; */
+    width:100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 100px;
+    overflow-y: scroll;
+    overflow-y: scroll;
+}
+
 #reminders-list{
     position: relative;
-    width: 99%;
-    height: 99%;
+    width:100%;
+    height: 100%;
     top: 0;
     left: 0;
     right: 0;
@@ -49,6 +83,10 @@ main{
     overflow-y: scroll;
     background-color:blanchedalmond;
     font-size: xx-large;
+    /* border-radius: 15px; */
+    /* border-radius:  0px 0px 50px 50px; */
+
+    clip-path: inset(0 round 0px 0px 50px 50px);
 }
 
 #reminders-list ul{
@@ -88,18 +126,6 @@ main{
     background-color: rgb(255, 208, 137);
 }
 
-
-/* ARROW */
-.arrow {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-}
-.down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-}
 
 #controls{
     position:absolute;
@@ -171,7 +197,7 @@ main{
     position: relative;
     display: none;
     width: 100%;
-    height: 100%;
+    height: 90%;
     top: 0;
     left: 0;
     right: 0;
@@ -189,7 +215,7 @@ ul {list-style-type: none;}
 .month {
     padding: 5px 5px;
     width: 100%;
-    background: #1abc9c;
+    background: rgb(163, 13, 93);
     text-align: center;
 }
 
@@ -243,34 +269,12 @@ ul {list-style-type: none;}
 
 .days li .active {
     padding: 5px;
-    background: #1abc9c;
+    background: royalblue;
     color: white !important
 }
 
-#scanner{
-    position: center;
-    display: none;
-    width: 500px;
-    height: 500px;
-    top: 40%;
-    left: 50%;
-    position: absolute;
-    margin-top: -275px;
-    margin-left: -250px;
-    /* top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; */
-    /* margin: auto; */
-    overflow-y:auto;
-    /* z-index: 2; */
-    background-color: black;
-    cursor: pointer;
-    overflow:auto;
-}
-
 .scannerimg{
-    background-color: red;
+    /* background-color: red; */
     /* margin-left: auto; */
     /* margin-right: auto; */
     /* width: 50%; */
@@ -279,9 +283,11 @@ ul {list-style-type: none;}
     top:15px;
     z-index: 1;
 }
-#scanner .control-button{
+
+.scanner .control-button{
     z-index: 3;
     position:relative;
-    top:405px;
-    left:50px;
+    /* padding-top: 300px; */
+    top:425px;
+    left:35%;
 }

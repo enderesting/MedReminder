@@ -6,22 +6,22 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<div id="app">
+    <body>
+        <div class="scanner">
+            <img class="scannerimg" src="scanning.png" alt="scanning" width="400" height="400">
 
-<body>
-    <div id="header">
-        <img src="scanning.png" alt="scanning" width="400" height="400">
-    </div>
-    <div id="main">
-        <button onclick=add_reminder() class="control-button" class="tooltip">
-            <i class="fa fa-check"></i>
-            <span class="tooltiptext">confirm</span>
-        </button>
-        <button onclick=cancel_reminder() class="control-button" class="tooltip">
-            <i class="fa fa-times"></i>
-            <span class="tooltiptext">cancel</span>
-        </button>
-    </div>
-</body>
+            <button onclick= "add_med_reminder('9:00 Take Prozac')" class="control-button" class="tooltip">
+                <i class="fa fa-check"></i>
+                <!-- <span class="tooltiptext">confirm</span> -->
+            </button>
+            <button onclick=cancel_reminder() class="control-button" class="tooltip">
+                <i class="fa fa-times"></i>
+                <!-- <span class="tooltiptext">cancel</span> -->
+            </button>
+        </div>
+    </body>
+</div>
 <script src="behavior.js"></script>
 
 </html>
