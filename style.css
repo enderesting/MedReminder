@@ -256,7 +256,17 @@ ul {list-style-type: none;}
     flex-direction: row;
     /* grid-auto-rows: 1fr; */
     flex-wrap: wrap;
+    font-size: 80px;
 }
+
+.prev, .next{
+    font-size:80px;
+    /* color:red; */
+    padding: 16px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(255, 137, 137, 0.8);
+  }
 
 .days li {
     list-style-type: none;
@@ -274,6 +284,7 @@ ul {list-style-type: none;}
     color: white !important
 }
 
+/* scanning */
 .scannerimg{
     /* background-color: red; */
     /* margin-left: auto; */
@@ -292,3 +303,5 @@ ul {list-style-type: none;}
     top:425px;
     left:35%;
 }
+
+/* calendar new */
