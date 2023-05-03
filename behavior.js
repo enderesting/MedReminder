@@ -4,8 +4,11 @@ var controls = document.getElementById("controls");
 var header = document.getElementById("header");
 var datename = document.querySelector('.datename');
 var ul = document.getElementById("ul");
+var cButton = document.getElementById("calendarButton");
 
 function calendarToggle() {
+
+    cButton.classList.toggle('rotate');
     if (calendar.style.display == "block") {
         calendar.style.display = "none";
         reminders.style.display = "block";

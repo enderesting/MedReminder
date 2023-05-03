@@ -305,3 +305,7 @@ ul {list-style-type: none;}
 }
 
 /* calendar new */
+
+.rotate {
+    transform: rotate(180deg);
+}
