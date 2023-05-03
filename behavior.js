@@ -155,11 +155,21 @@ function cancel_reminder() {
 }
 
 // NEW CALENDAR
-let daysIndex = 1;
-let monthsIndex = 1;
+let daysIndex = 4; // note that these start with 1
+let monthsIndex = 4; // both these
+let yearIndex = 2023;
+let weekDay = getDayFromDate(daysIndex,monthsIndex-1,yearIndex); //starts with sunday: 0
 let dayList = calculateDays(1);
 updateDays(daysIndex);
 updateMonths(monthsIndex);
+
+function getDayFromDate(day, month, year) {
+    const date = new Date(year, month, day);
+    const weekDay = date.getDay();
+    console.log("the date is " + date);
+    console.log("the day is " + weekDay);
+    return day;
+  }
 
 // Next/previous controls
 function plusSlides(n,elemName) {
