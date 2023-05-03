@@ -278,5 +278,10 @@ function calculateDays(monthsIndex){
 }
 
 function pop_reminder() {
-    ul.firstChild.firstChild.firstChild.checked = true;
+    let reminder = ul.firstChild;
+    if (reminder == null) {
+        alert("No reminders.");
+    } else
+        if (confirm("Take reminder:\n" + reminder.querySelector("#text")))
+            reminder.firstChild.firstChild.checked = true;
 }
