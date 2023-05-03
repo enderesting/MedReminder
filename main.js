@@ -123,7 +123,6 @@ function showSlides(n,elemName) {
 
 function clean_checked() {
     for (li of ul.childNodes) {
-        if (li == ul.firstChild) {continue}
         if (li.firstChild.firstChild.checked) {
             ul.removeChild(li);
           }
