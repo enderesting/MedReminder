@@ -3,24 +3,8 @@ var reminders = document.getElementById("reminders-list");
 var controls = document.getElementById("controls");
 var header = document.getElementById("header");
 var datename = document.querySelector('.datename');
-window.onload = function () {
-    if (!("first" in localStorage) && window.location.href == "main.html") {
-        localStorage.removeItem("list");
-        localStorage.setItem("first");
-    }
-}
-window.onload = load_list();
+var ul = document.getElementById("ul");
 
-function calendarToggle() {
-    if (calendar.style.display == "block") {
-        calendar.style.display = "none";
-        reminders.style.display = "block";
-    } else {
-        calendar.style.display = "block";
-        reminders.style.display = "none";
-    }
-    // alert("AAA");
-}
 
 function selectDate(num) {
     //loop through the list elements
@@ -79,13 +63,6 @@ function go_to_scanner() {
     window.location.href = "scanning.html";
 }
 
-function load_list() {
-    if (datename.textContent == 'Saturday 8th of April'){
-        document.getElementById("ul").innerHTML = localStorage.getItem("future_list");
-    }else{
-        document.getElementById("ul").innerHTML = localStorage.getItem("list");
-    }
-}
 
 // function load_future_list() {
 //     add_reminder('Refill Prozac');
@@ -102,8 +79,7 @@ function go_to_main() {
 }
 
 function add_med_reminder(str){
-    add_reminder(str);
-    window.location.href = "main.html";
+    window.location.href = `main.html?str=${str}`;
 }
 
 function add_reminder(str) {
