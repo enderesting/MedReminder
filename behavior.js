@@ -151,8 +151,10 @@ function cancel_reminder() {
 // NEW CALENDAR
 let daysIndex = 1;
 let monthsIndex = 1;
-showSlides(daysIndex, "days");
-showSlides(monthsIndex, "month");
+let dayList = calculateDays(1);
+// console.log(dayList);
+updateDays(daysIndex, "days");
+updateMonths(monthsIndex, "month");
 
 // Next/previous controls
 function plusSlides(n,elemName) {
@@ -160,85 +162,98 @@ function plusSlides(n,elemName) {
     // num += n;
     // showSlides(num,elemName);
     if (elemName == "days"){
-        showSlides(daysIndex+=n,elemName);
+        updateDays(daysIndex+=n);
     }
     if (elemName == "month"){
         // alert(monthsIndex);
-        showSlides(monthsIndex+=n,elemName);
+        updateMonths(monthsIndex+=n);
     }
 }
 
 // Thumbnail image controls
 function currentSlide(n,elemName) {
     if (elemName == "days"){
-        showSlides(daysIndex=n,elemName);
+        updateDays(daysIndex=n);
     }
     if (elemName == "month"){
         // alert(monthsIndex);
-        showSlides(monthsIndex=n,elemName);
+        updateMonths(monthsIndex=n);
     }
 }
 
-function getAssociatedIndex (elemName){
-    if (elemName == "days"){
-        return daysIndex;
-    }
-    if (elemName == "month"){
-        // alert(monthsIndex);
-        return monthsIndex;
-    }
-}
-
-function showSlides(n,elemName) {
-    const indexMap = {
-        days: daysIndex,
-        month: monthsIndex
-    };
-    let currentIndex = indexMap[elemName];
+function updateDays(n) {
     let i;
-    let slidesFull = document.getElementsByClassName(elemName);
-    let slides = Array.from(slidesFull);
-    let months = document.getElementsByClassName("month");
-    console.log(monthsIndex);
-    let mon = months[(monthsIndex-1)%12].textContent;
-    console.log(mon);
-    const smallMonths = [4,6,9,11];
-    if(monthsIndex == 2){
-        slides = slides.slice(0,28);
-        console.log("days in this month: 28");
-    }else if(smallMonths.includes(monthsIndex)){
-        slides = slides.slice(0,30);
-        console.log("days in this month: 30");
-    }else{
-        // let slides = slidesFull;
-        console.log("days in this month: 31");
-    }
-    //31: 1 3 5 7 8 10 12
-    //30: 4 6 9 11
-    //28: 2 
+    let currentIndex = daysIndex;
+    let slides = dayList;
+    // let monthSlides = dayList;
 
+    if (n > slides.length) {
+        console.log("next month!");
+        plusSlides(1,"month");
+        currentIndex = 1;
+        console.log("day now:" + currentIndex);
+
+    }
+    if (n < 1) {
+        console.log("previous month!");
+        plusSlides(-1,"month");
+        currentIndex = (dayList.length);
+        console.log("day now:" + currentIndex);
+
+    }
+    for (i = 0; i < dayList.length; i++) {
+        dayList[i].style.display = "none";
+    }
+    dayList[currentIndex-1].style.display = "block";
+
+    daysIndex = currentIndex;
+    // console.log(currentIndex);
+    // console.log(daysIndex);
+} 
+
+function updateMonths(n){
+    let i;
+    let currentIndex = monthsIndex;
+    let slides = document.getElementsByClassName("month");
 
     //   let dots = document.getElementsByClassName("dot");
     if (n > slides.length) {
         currentIndex = 1;
-        // plusSlides(1,"month");
     }
     if (n < 1) {
         currentIndex = slides.length;
-        // plusSlides(-1,"month");
     }
-    for (i = 0; i < slides.length; i++) {
+    for (i = 0; i < slides.length; i++) { // turn all slides off
         slides[i].style.display = "none";
     }
-    slides[currentIndex-1].style.display = "block";
+    slides[currentIndex-1].style.display = "block"; //turn current index on
 
-    if (elemName == "days"){ //update the actual stuff
-        daysIndex = currentIndex;
-    }
-    if (elemName == "month"){
-        monthsIndex= currentIndex;
-    }
+    //update various states
+    monthsIndex = currentIndex;
+    dayList = calculateDays(currentIndex);
+    // console.log("updating days:" + dayList.length);
+}
 
-    // console.log(currentIndex);
-    // console.log(daysIndex);
-} 
+function calculateDays(monthsIndex){
+    let months = document.getElementsByClassName("days");
+    let slides = Array.from(months);
+    // console.log(monthsIndex);
+    let mon = months[(monthsIndex+11)%12].textContent;
+    // console.log(mon);
+    const smallMonths = [4,6,9,11];
+    if(monthsIndex == 2){
+        slides = slides.slice(0,28);
+        // console.log("days in this month: 28");
+    }else if(smallMonths.includes(monthsIndex)){
+        slides = slides.slice(0,30);
+        // console.log("days in this month: 30");
+    }else{
+        // let slides = slidesFull;
+        // console.log("days in this month: 31");
+    }
+    //31: 1 3 5 7 8 10 12
+    //30: 4 6 9 11
+    //28: 2 
+    // console.log("days in this month: " + slides.length);
+    return slides;
+}
