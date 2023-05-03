@@ -120,3 +120,12 @@ function showSlides(n,elemName) {
     // console.log(currentIndex);
     // console.log(daysIndex);
 }
+
+function clean_checked() {
+    for (li of ul.childNodes) {
+        if (li == ul.firstChild) {continue}
+        if (li.firstChild.firstChild.checked) {
+            ul.removeChild(li);
+          }
+    }
+}

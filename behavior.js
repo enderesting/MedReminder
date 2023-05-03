@@ -2,7 +2,8 @@ var calendar = document.getElementById("calendar");
 var reminders = document.getElementById("reminders-list");
 var controls = document.getElementById("controls");
 var header = document.getElementById("header");
-var datename = document.getElementsByClassName('.datename');
+var datename = document.querySelector('.datename');
+var ul = document.getElementById("ul");
 
 
 function selectDate(num) {
