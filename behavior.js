@@ -276,3 +276,7 @@ function calculateDays(monthsIndex){
     //28: 2 
     return days;
 }
+
+function pop_reminder() {
+    ul.firstChild.firstChild.firstChild.checked = true;
+}
