@@ -1,10 +1,45 @@
+var calendar = document.getElementById("calendar");
+var reminders = document.getElementById("reminders-list");
+var controls = document.getElementById("controls");
+var header = document.getElementById("header");
+var datename = document.querySelector('.datename');
+var ul = document.getElementById("ul");
+var cButton = document.getElementById("calendarButton");
+
+function calendarToggle() {
+
+    cButton.classList.toggle('rotate');
+    if (calendar.style.display == "block") {
+        calendar.style.display = "none";
+        reminders.style.display = "block";
+    } else {
+        calendar.style.display = "block";
+        reminders.style.display = "none";
+    }
+    // alert("AAA");
+}
 urlParams = new URLSearchParams(window.location.search);
 
 window.onload = function () {
+  updateDate();
+  updateDays();
   if (urlParams.has("str")) {
     add_reminder(urlParams.get("str"));
   }
   load_list();
+}
+
+function calendarToggle() {
+
+    cButton.classList.toggle('rotate');
+    if (calendar.style.display == "block") {
+        calendar.style.display = "none";
+        reminders.style.display = "block";
+    } else {
+        calendar.style.display = "block";
+        reminders.style.display = "none";
+    }
+    // alert("AAA");
 }
 
 // NEW CALENDAR

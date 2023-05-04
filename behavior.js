@@ -1,23 +1,23 @@
-var calendar = document.getElementById("calendar");
-var reminders = document.getElementById("reminders-list");
-var controls = document.getElementById("controls");
-var header = document.getElementById("header");
-var datename = document.querySelector('.datename');
-var ul = document.getElementById("ul");
-var cButton = document.getElementById("calendarButton");
+// var calendar = document.getElementById("calendar");
+// var reminders = document.getElementById("reminders-list");
+// var controls = document.getElementById("controls");
+// var header = document.getElementById("header");
+// var datename = document.querySelector('.datename');
+// var ul = document.getElementById("ul");
+// var cButton = document.getElementById("calendarButton");
 
-function calendarToggle() {
+// function calendarToggle() {
 
-    cButton.classList.toggle('rotate');
-    if (calendar.style.display == "block") {
-        calendar.style.display = "none";
-        reminders.style.display = "block";
-    } else {
-        calendar.style.display = "block";
-        reminders.style.display = "none";
-    }
-    // alert("AAA");
-}
+//     cButton.classList.toggle('rotate');
+//     if (calendar.style.display == "block") {
+//         calendar.style.display = "none";
+//         reminders.style.display = "block";
+//     } else {
+//         calendar.style.display = "block";
+//         reminders.style.display = "none";
+//     }
+//     // alert("AAA");
+// }
 
 function load_list() {
     if (datename.textContent == 'Saturday 8th of April'){
@@ -161,8 +161,34 @@ function pop_reminder() {
         alert("No reminders.");
     } else
         // if (confirm("Take reminder:\n" + reminder.querySelector("#text")))
-        if (confirm("Reminder:\n" + "9:00   Take Prozac")){
+        if (confirm("Reminder:\n" + "9:00   Take Prozac"))
             reminder.firstChild.firstChild.checked = true;
             console.log(reminder);
-        }
+}
+
+
+function updateDate() {
+    let stDate = localStorage.getItem("day");
+    if (stDate == null) {
+        localStorage.setItem("day", Number(daysIndex));
+        localStorage.setItem("month", Number(monthsIndex));
+        localStorage.setItem("year", Number(yearIndex));
+    }
+    else {
+        daysIndex = Number(localStorage.getItem("day"));
+        monthsIndex = Number(localStorage.getItem("month"));
+        yearIndex = Number(localStorage.getItem("year"));
+    }
+}
+
+function getMonthStr(int) {
+    let months = ['February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January'];
+    return months[int];
+}
+
+function updateLocalSt() {
+    localStorage.setItem("day", Number(daysIndex));
+    localStorage.setItem("month", Number(monthsIndex));
+    localStorage.setItem("year", Number(yearIndex));
+    console.log( "" +daysIndex + "//" + monthsIndex + "//" + yearIndex)
 }
