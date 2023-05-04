@@ -276,3 +276,12 @@ function calculateDays(monthsIndex){
     //28: 2 
     return days;
 }
+
+function pop_reminder() {
+    let reminder = ul.firstChild;
+    if (reminder == null) {
+        alert("No reminders.");
+    } else
+        if (confirm("Take reminder:\n" + reminder.querySelector("#text")))
+            reminder.firstChild.firstChild.checked = true;
+}
