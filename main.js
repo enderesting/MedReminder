@@ -45,8 +45,8 @@ function updateDatename(){
     if(slides.length > 0){
         weekIndex = getDayFromDate(daysIndex,monthsIndex-1,yearIndex);
         weekDay = getWeekDayStr(weekIndex);
-        console.log("weekday is: " + weekDay);
-        console.log (slides[monthsIndex-1].textContent + " " + daysIndex + " " + weekDay);
+        // console.log("weekday is: " + weekDay);
+        // console.log (slides[monthsIndex-1].textContent + " " + daysIndex + " " + weekDay);
         datename = slides[monthsIndex-1].textContent + " " + daysIndex + " " + weekDay;
     }
 }
@@ -93,7 +93,7 @@ function updateMonths(n){
     
         //update various states
         monthsIndex = currentIndex;
-        console.log("currentIndex:" + currentIndex);
+        // console.log("currentIndex:" + currentIndex);
         slides[currentIndex-1].style.display = "block"; //turn current index on
     
         //the month changed, update how many days there are in the current month
