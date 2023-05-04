@@ -109,7 +109,7 @@ function go_to_main() {
 }
 
 function add_med_reminder(str){
-    window.location.href = `main.html?str=${str}`;
+    window.location.href = `main.html?str=${str}`; //come back tag
 }
 
 function add_reminder(str) {
@@ -144,9 +144,9 @@ function add_reminder(str) {
 }
 
 function clear_list(){
-    if (confirm("You are about to delete all reminders. Are you sure?")) {
+    if (confirm("You are going to delete all instances of this reminder. Are you sure?")) {
         localStorage.clear();
-        load_list();
+        window.location.href = "main.html";
     }
 }
 
@@ -154,133 +154,6 @@ function cancel_reminder() {
     window.location.href = "main.html";
 }
 
-// NEW CALENDAR
-let daysIndex = 4; // note that these start with 1
-let monthsIndex = 4; // both these
-let yearIndex = 2023;
-let weekIndex = getDayFromDate(daysIndex,monthsIndex-1,yearIndex); //starts with sunday: 0
-let dayList = calculateDays(1);
-updateDays(daysIndex);
-updateMonths(monthsIndex);
-
-function getDayFromDate(day, month, year) {
-    const date = new Date(year, month, day);
-    const weekDay = date.getDay();
-    // console.log("the date is " + date);
-    // console.log("the day is " + weekDay);
-    return weekDay;
-}
-
-function getWeekDayStr(weekDay){
-    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    return daysOfWeek[weekDay];
-}
-
-// Next/previous controls
-function plusSlides(n,elemName) {
-    if (elemName == "days"){
-        updateDays(daysIndex+=n);
-    }
-    if (elemName == "month"){
-        updateMonths(monthsIndex+=n);
-    }
-    updateDatename();
-}
-
-function updateDatename(){
-    let slides = document.getElementsByClassName("month");
-    weekIndex = getDayFromDate(daysIndex,monthsIndex-1,yearIndex);
-    weekDay = getWeekDayStr(weekIndex);
-    console.log("weekday is: " + weekDay);
-    console.log (slides[monthsIndex-1].textContent + " " + daysIndex + " " + weekDay);
-    datename = slides[monthsIndex-1].textContent + " " + daysIndex + " " + weekDay;
-}
-
-function updateDays(n) {
-    let i;
-    let currentIndex = daysIndex;
-
-    for (i = 0; i < dayList.length; i++) { //hide all
-        dayList[i].style.display = "none";
-    }
-
-    //check days of the current month, switch to next/prev months depending on daysList.length
-    if (n > dayList.length) {
-        // console.log("next month!");
-        plusSlides(1,"month");
-        currentIndex = 1;
-    }else if (n < 1) {
-        // console.log("previous month!");
-        plusSlides(-1,"month");
-        currentIndex = (dayList.length);
-    }
-
-    //currentIndext might've changed. update daysIndex
-    daysIndex = currentIndex;
-    dayList[daysIndex-1].style.display = "block";
-} 
-
-function updateMonths(n){
-    let i;
-    let currentIndex = monthsIndex;
-    let slides = document.getElementsByClassName("month");
-
-    for (i = 0; i < slides.length; i++) { // turn all slides off
-        slides[i].style.display = "none";
-    }
-    
-    if (n > slides.length) {
-        currentIndex = 1;
-    }else if (n < 1) {
-        currentIndex = slides.length;
-    }
-
-    //update various states
-    monthsIndex = currentIndex;
-    slides[currentIndex-1].style.display = "block"; //turn current index on
-
-    //the month changed, update how many days there are in the current month
-    dayList = calculateDays(currentIndex);
-
-    //if current day is outside of dayList range, change it to one
-    if(daysIndex > dayList.length || daysIndex < 0){
-        daysIndex = 1;
-        fuckthis(daysIndex);
-    }
-}
-
-//directly changing days to 1 when months are touched
-function fuckthis(n){
-    let i;
-    let currentIndex = n;
-    let days = document.getElementsByClassName("days");
-
-    for (i = 0; i < days.length; i++) { //hide all
-        days[i].style.display = "none";
-    }
-    daysIndex = currentIndex;
-    dayList[daysIndex-1].style.display = "block";
-}
-
-
-function calculateDays(monthsIndex){
-    let daysTotal = document.getElementsByClassName("days");
-    let days = Array.from(daysTotal);
-    const smallMonths = [4,6,9,11];
-    if(monthsIndex == 2){
-        days = days.slice(0,28);
-        // console.log("days in this month: 28");
-    }else if(smallMonths.includes(monthsIndex)){
-        days = days.slice(0,30);
-        // console.log("days in this month: 30");
-    }else{
-        // console.log("days in this month: 31");
-    }
-    //31: 1 3 5 7 8 10 12
-    //30: 4 6 9 11
-    //28: 2 
-    return days;
-}
 
 function pop_reminder() {
     let reminder = ul.firstChild;
@@ -288,6 +161,8 @@ function pop_reminder() {
         alert("No reminders.");
     } else
         // if (confirm("Take reminder:\n" + reminder.querySelector("#text")))
-        if (confirm("Reminder:\n" + "9:00   Take Prozac"))
+        if (confirm("Reminder:\n" + "9:00   Take Prozac")){
             reminder.firstChild.firstChild.checked = true;
+            console.log(reminder);
+        }
 }
