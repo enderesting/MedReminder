@@ -20,9 +20,9 @@
 // }
 
 function load_list() {
-    if (datename.textContent == 'Saturday 8th of April'){
+    if (datename.textContent == 'Saturday 8th of April') {
         document.getElementById("ul").innerHTML = localStorage.getItem("future_list");
-    }else{
+    } else {
         document.getElementById("ul").innerHTML = localStorage.getItem("list");
     }
 }
@@ -31,7 +31,7 @@ function clean_checked() {
     for (li of ul.childNodes) {
         if (li.firstChild.firstChild.checked) {
             ul.removeChild(li);
-          }
+        }
     }
 }
 
@@ -108,7 +108,18 @@ function go_to_main() {
     window.location.href = "main.html";
 }
 
-function add_med_reminder(str){
+function go_to_confirm() {
+    let yes = localStorage.getItem("list");
+    if (yes != '') {
+        alert("Duplicate scanned. Returning.");
+        window.location.href = "main.html";
+    }
+    else {
+        window.location.href = "confirm.html";
+    }
+}
+
+function add_med_reminder(str) {
     window.location.href = `main.html?str=${str}`; //come back tag
 }
 
@@ -140,20 +151,15 @@ function add_reminder(str) {
     let final = reminders_list + ul.innerHTML;
 
     localStorage.setItem("list", final);
-    // window.location.href = "main.html";
+    window.location.href = "main.html";
 }
 
-function clear_list(){
+function clear_list() {
     if (confirm("You are going to delete all instances of this reminder. Are you sure?")) {
         localStorage.clear();
         window.location.href = "main.html";
     }
 }
-
-function cancel_reminder() {
-    window.location.href = "main.html";
-}
-
 
 function pop_reminder() {
     let reminder = ul.firstChild;
@@ -163,7 +169,7 @@ function pop_reminder() {
         // if (confirm("Take reminder:\n" + reminder.querySelector("#text")))
         if (confirm("Reminder:\n" + "9:00   Take Prozac"))
             reminder.firstChild.firstChild.checked = true;
-            console.log(reminder);
+    console.log(reminder);
 }
 
 
@@ -190,5 +196,5 @@ function updateLocalSt() {
     localStorage.setItem("day", Number(daysIndex));
     localStorage.setItem("month", Number(monthsIndex));
     localStorage.setItem("year", Number(yearIndex));
-    console.log( "" +daysIndex + "//" + monthsIndex + "//" + yearIndex)
+    console.log("" + daysIndex + "//" + monthsIndex + "//" + yearIndex)
 }

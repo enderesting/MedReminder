@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Info</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<div id="app">
+
+    <body>
+        <!-- <div id="main-border"> -->
+        <header>
+            <p>Prozac</p>
+        </header>
+        <main>
+            <div id="controls">
+                <button onclick="add_med_reminder('9:00 Take Prozac')" class="control-button" class="tooltip">
+                    <i class="fa fa-check"></i>
+                    <!-- <span class="tooltiptext">confirm</span> -->
+                </button>
+                <button onclick="go_to_main()" class="control-button" class="tooltip">
+                    <i class="fa fa-reply"></i>
+                    <!-- <span class="tooltiptext">cancel</span> -->
+                </button>
+            </div>
+
+            <div id="info">
+
+                <p><b>Medication:</b> Prozac</p>
+                <p><b>Dosage:</b> 1 pill in the morning after breakfast.</p>
+                <p><b>Quantity:</b> 20 pills</p>
+                <p><b>Refills:</b> 2 remaining</p>
+                <p><b>Refill date:</b> 08/04/2023</p>
+                <p><b>Doctor:</b> Real Doc, MD | License Number: 1234-567</p>
+                <!-- <div class="main-border"> -->
+                <!-- Choose Reminder Time -->
+                <p><b>Reminder time:</b></p>
+                <div class="time-adjust">
+                    <div class="arrows"><i class="fa fa-chevron-up"></i><i class="fa fa-chevron-up"></i><i
+                            class="fa fa-chevron-down kill"></i><i class="fa fa-chevron-up"></i><i
+                            class="fa fa-chevron-up"></i></div>
+                    <div class="time">09:00</div>
+                    <div class="arrows"><i class="fa fa-chevron-down"></i><i class="fa fa-chevron-down"></i><i
+                            class="fa fa-chevron-down kill"></i><i class="fa fa-chevron-down"></i><i
+                            class="fa fa-chevron-down"></i></div>
+                </div>
+
+                <!-- d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d -->
+                <!-- </div> -->
+
+            </div>
+            <!-- <div id="controls">
+                    <button onclick="go_to_scanner()" class="control-button" class="tooltip">
+                        <i class="fa fa-plus"></i>
+                        <span class="tooltiptext">add reminder</span>
+                    </button>
+                    <button onclick="clear_list()" class="control-button" class="tooltip">
+                        <i class=" 	fa fa-trash"></i>
+                        <span class="tooltiptext">clear list</span>
+                    </button>
+                </div> -->
+
+            <!-- <p class="patient"><b>Name:</b> John Real Guy Doe</p>
+                <p class="under-patient"><b>Age:</b> 30 <b>Gender:</b> M</p>
+                <p><b>Address:</b> 123 Unicorn Street</p> -->
+
+        </main>
+        <!-- </div> -->
+    </body>
+</div>
+<script src="behavior.js"></script>
+
+</html>
