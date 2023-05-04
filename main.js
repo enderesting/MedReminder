@@ -5,7 +5,6 @@ var header = document.getElementById("header");
 // var datenames = document.getElementsByClassName("datename");
 // var datename = datenames[0];
 var datename = document.querySelector('.datename');
-alert(datename.textContent);
 var ul = document.getElementById("ul");
 var cButton = document.getElementById("calendarButton");
 
