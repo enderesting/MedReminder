@@ -12,13 +12,17 @@
     <body>
         <!-- <div id="main-border"> -->
             <header>
-                <p>Prozac</p>
+                <h1><b>Prozac</b></h1>
             </header>            
             <main>
                 <div id="controls">
                     <button onclick="go_to_main()" class="control-button" class="tooltip">
                         <i class="fa fa-reply"></i>
                         <span class="tooltiptext">return to main</span>
+                    </button>
+                    <button onclick="clear_list()" class="control-button" class="tooltip">
+                        <i class="fa fa-trash"></i>
+                        <span class="tooltiptext">delete reminder</span>
                     </button>
                 </div>
 
@@ -38,10 +42,14 @@
                         <div class="time">09:00</div>
                         <div class = "arrows"><i class="fa fa-chevron-down"></i><i class="fa fa-chevron-down"></i><i class="fa fa-chevron-down kill"></i><i class="fa fa-chevron-down"></i><i class="fa fa-chevron-down"></i></div>
                     </div>
-                
-                        <!-- d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d<br>d -->
-                    <!-- </div> -->
-
+                    <div class="time-control">
+                        <button onclick="" class="control-button" class="tooltip">
+                            <i class="fa fa-floppy-o"></i>
+                        </button>
+                        <button onclick="" class="control-button" class="tooltip">
+                            <i class="fa fa-undo"></i>
+                        </button>
+                    </div>
                 </div>
                 <!-- <div id="controls">
                     <button onclick="go_to_scanner()" class="control-button" class="tooltip">

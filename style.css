@@ -330,7 +330,7 @@ ul {list-style-type: none;}
     left: 0;
     right: 0;
     bottom: 0;
-    padding-bottom: 130px;
+    padding-bottom: 15px;
     padding-left: 15px;
     overflow-y: scroll;
     -ms-overflow-style: none;  /* IE and Edge */
@@ -338,8 +338,14 @@ ul {list-style-type: none;}
 }
 
 #info p{
-    /* background-color: red; */
     margin: 20px;
+}
+
+.time-control{
+    padding-top: 30px;
+    /* position: relative; */
+    padding-left: 260px;
+    /* background-color: red; */
 }
 .time-adjust{
     /* background-color: blue; */
