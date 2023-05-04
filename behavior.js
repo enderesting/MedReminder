@@ -186,6 +186,7 @@ function plusSlides(n,elemName) {
     }
     updateDatename();
     updateLocalSt();
+    hide();
 }
 
 function updateDatename(){
@@ -318,4 +319,8 @@ function updateLocalSt() {
     localStorage.setItem("month", Number(monthsIndex));
     localStorage.setItem("year", Number(yearIndex));
     console.log( "" +daysIndex + "//" + monthsIndex + "//" + yearIndex)
+}
+
+hide(){
+
 }
