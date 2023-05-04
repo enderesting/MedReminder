@@ -194,6 +194,7 @@ function updateDatename(){
     console.log("weekday is: " + weekDay);
     console.log (slides[monthsIndex-1].textContent + " " + daysIndex + " " + weekDay);
     datename = slides[monthsIndex-1].textContent + " " + daysIndex + " " + weekDay;
+    document.localStorage.setItem("date", [daysIndex, monthsIndex, yearIndex]);
 }
 
 function updateDays(n) {
