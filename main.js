@@ -2,7 +2,10 @@ var calendar = document.getElementById("calendar");
 var reminders = document.getElementById("reminders-list");
 var controls = document.getElementById("controls");
 var header = document.getElementById("header");
+// var datenames = document.getElementsByClassName("datename");
+// var datename = datenames[0];
 var datename = document.querySelector('.datename');
+alert(datename.textContent);
 var ul = document.getElementById("ul");
 var cButton = document.getElementById("calendarButton");
 
@@ -83,7 +86,9 @@ function updateDatename(){
         weekDay = getWeekDayStr(weekIndex);
         // console.log("weekday is: " + weekDay);
         // console.log (slides[monthsIndex-1].textContent + " " + daysIndex + " " + weekDay);
-        datename = slides[monthsIndex-1].textContent + " " + daysIndex + " " + weekDay;
+        datename.innerHTML = weekDay +" " + slides[monthsIndex-1].textContent + " " + daysIndex;
+        // datename = "hi :)";
+        console.log(datename.innerHTML);
     }
 }
 

@@ -132,9 +132,20 @@ main{
     padding: 12px 20px; /* Some padding */
     font-size: 50px; /* Set a font size */
     cursor: pointer; /* Mouse pointer on hover */
+    /* margin-right:30px; */
     /* position:absolute; */
     
 }
+
+.control-button.corner{
+    /* left: 0px; */
+    /* right: 0px; */
+    top:0px;
+    right:-520px;
+    position:relative;
+    /* padding-left: -400px; */
+}
+
 .control-button:hover {
     background-color: RoyalBlue;
 }
@@ -344,7 +355,7 @@ ul {list-style-type: none;}
 .time-control{
     padding-top: 30px;
     /* position: relative; */
-    padding-left: 260px;
+    padding-left: 285px;
     /* background-color: red; */
 }
 .time-adjust{
