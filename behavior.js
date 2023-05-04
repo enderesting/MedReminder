@@ -322,5 +322,11 @@ function updateLocalSt() {
 }
 
 hide(){
+    if(daysIndex in [4,5,6,7] ||
+        monthsIndex == 4
+        yearIndex == 2023) {
+        reminders.style.display = block;
+    }
+    else { reminders.style.display = none; }
 
 }
