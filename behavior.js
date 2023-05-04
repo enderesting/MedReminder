@@ -158,7 +158,7 @@ function cancel_reminder() {
 let daysIndex = 4; // note that these start with 1
 let monthsIndex = 4; // both these
 let yearIndex = 2023;
-let weekDay = getDayFromDate(daysIndex,monthsIndex-1,yearIndex); //starts with sunday: 0
+let weekIndex = getDayFromDate(daysIndex,monthsIndex-1,yearIndex); //starts with sunday: 0
 let dayList = calculateDays(1);
 updateDays(daysIndex);
 updateMonths(monthsIndex);
@@ -166,10 +166,15 @@ updateMonths(monthsIndex);
 function getDayFromDate(day, month, year) {
     const date = new Date(year, month, day);
     const weekDay = date.getDay();
-    console.log("the date is " + date);
-    console.log("the day is " + weekDay);
-    return day;
-  }
+    // console.log("the date is " + date);
+    // console.log("the day is " + weekDay);
+    return weekDay;
+}
+
+function getWeekDayStr(weekDay){
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    return daysOfWeek[weekDay];
+}
 
 // Next/previous controls
 function plusSlides(n,elemName) {
@@ -184,8 +189,9 @@ function plusSlides(n,elemName) {
 
 function updateDatename(){
     let slides = document.getElementsByClassName("month");
-    weekDay = getDayFromDate(daysIndex,monthsIndex-1,yearIndex);
-    
+    weekIndex = getDayFromDate(daysIndex,monthsIndex-1,yearIndex);
+    weekDay = getWeekDayStr(weekIndex);
+    console.log("weekday is: " + weekDay);
     console.log (slides[monthsIndex-1].textContent + " " + daysIndex + " " + weekDay);
     datename = slides[monthsIndex-1].textContent + " " + daysIndex + " " + weekDay;
 }
