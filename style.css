@@ -132,6 +132,7 @@ main{
     padding: 12px 20px; /* Some padding */
     font-size: 50px; /* Set a font size */
     cursor: pointer; /* Mouse pointer on hover */
+    /* margin-right:30px; */
     /* position:absolute; */
     
 }
@@ -344,7 +345,7 @@ ul {list-style-type: none;}
 .time-control{
     padding-top: 30px;
     /* position: relative; */
-    padding-left: 260px;
+    padding-left: 285px;
     /* background-color: red; */
 }
 .time-adjust{
