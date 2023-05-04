@@ -136,6 +136,16 @@ main{
     /* position:absolute; */
     
 }
+
+.control-button.corner{
+    /* left: 0px; */
+    /* right: 0px; */
+    top:0px;
+    right:-520px;
+    position:relative;
+    /* padding-left: -400px; */
+}
+
 .control-button:hover {
     background-color: RoyalBlue;
 }

@@ -34,7 +34,7 @@
         <header id="header">
             <h1 class="datename">Tuesday 4th of April</h1>
             <button id="calendarButton" onclick="calendarToggle()" style="width:100px;height:40px;">
-                <i class="arrow down" style="width:20px;height:20px;" ></i>
+                <i class="arrow down" style="width:20px;height:20px;"></i>
             </button>
             <!-- <p>Down arrow: <i class="arrow down"></i></p> -->
 
@@ -117,17 +117,16 @@
                     <div class="month fade">December</div>
                     <a class="next m" onclick="plusSlides(1,'month')">&#10095;</a>
                 </div>
-                
-                </div>
+
             </div>
         </main>
-        <out>
-            <button onclick="pop_reminder()" class="control-button" class="tooltip">
-                <i class=" 	fa fa-clock-o"></i>
-                <span class="tooltiptext">clear list</span>
-            </button>
-        </out>
     </body>
+    <out>
+        <button onclick="pop_reminder()" class="control-button corner" class="tooltip">
+            <i class=" 	fa fa-clock-o"></i>
+            <span class="tooltiptext">clear list</span>
+        </button>
+    </out>
 
     <script src="behavior.js"></script>
     <script src="main.js"></script>
