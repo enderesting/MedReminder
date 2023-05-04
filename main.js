@@ -5,5 +5,5 @@ window.onload = function () {
     add_reminder(urlParams.get("str"));
   }
   load_list();
+  updateDate();
 }
-

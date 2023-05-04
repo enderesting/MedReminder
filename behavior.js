@@ -292,3 +292,24 @@ function pop_reminder() {
         if (confirm("Reminder:\n" + "9:00   Take Prozac"))
             reminder.firstChild.firstChild.checked = true;
 }
+
+
+function updateDate() {
+    let stDate = localStorage.getItem("day");
+    if (stDate == null) {
+        localStorage.setItem("day", daysIndex);
+        localStorage.setItem("month", month);
+        localStorate.setItem("year", year);
+    }
+    else {
+
+        daysIndex = localStorage.getItem("day");
+        monthsIndex = localStorage.getItem("month");
+        yearIndex = localStorage.getItem("year");
+    }
+    updateDisplayDate();
+}
+
+function updateDisplayDate() {
+
+}
