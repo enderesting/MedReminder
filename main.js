@@ -73,6 +73,7 @@ function plusSlides(n,elemName) {
         updateMonths(monthsIndex+=n);
     }
     updateDatename();
+    hide();
 }
 
 function updateDatename(){
@@ -173,4 +174,10 @@ function calculateDays(monthsIndex){
     //30: 4 6 9 11
     //28: 2 
     return days;
+}
+
+function hide() {
+    return ((daysIndex == 4 || daysIndex == 5 || daysIndex == 6 || daysIndex == 7) &&
+            monthsIndex == 4 &&
+            yearIndex == 2023)
 }
