@@ -185,6 +185,7 @@ function plusSlides(n,elemName) {
         updateMonths(monthsIndex+=n);
     }
     updateDatename();
+    updateLocalSt();
 }
 
 function updateDatename(){
@@ -194,7 +195,6 @@ function updateDatename(){
     console.log("weekday is: " + weekDay);
     console.log (slides[monthsIndex-1].textContent + " " + daysIndex + " " + weekDay);
     datename = slides[monthsIndex-1].textContent + " " + daysIndex + " " + weekDay;
-    document.localStorage.setItem("date", [daysIndex, monthsIndex, yearIndex]);
 }
 
 function updateDays(n) {
@@ -297,19 +297,25 @@ function pop_reminder() {
 function updateDate() {
     let stDate = localStorage.getItem("day");
     if (stDate == null) {
-        localStorage.setItem("day", daysIndex);
-        localStorage.setItem("month", month);
-        localStorate.setItem("year", year);
+        localStorage.setItem("day", Number(daysIndex));
+        localStorage.setItem("month", Number(monthsIndex));
+        localStorage.setItem("year", Number(yearIndex));
     }
     else {
-
-        daysIndex = localStorage.getItem("day");
-        monthsIndex = localStorage.getItem("month");
-        yearIndex = localStorage.getItem("year");
+        daysIndex = Number(localStorage.getItem("day"));
+        monthsIndex = Number(localStorage.getItem("month"));
+        yearIndex = Number(localStorage.getItem("year"));
     }
-    updateDisplayDate();
 }
 
-function updateDisplayDate() {
+function getMonthStr(int) {
+    let months = ['February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January'];
+    return months[int];
+}
 
+function updateLocalSt() {
+    localStorage.setItem("day", Number(daysIndex));
+    localStorage.setItem("month", Number(monthsIndex));
+    localStorage.setItem("year", Number(yearIndex));
+    console.log( "" +daysIndex + "//" + monthsIndex + "//" + yearIndex)
 }
