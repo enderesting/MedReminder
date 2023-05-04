@@ -193,7 +193,7 @@ main{
     bottom: 0;
     /* margin: auto; */
     z-index: 2;
-    background-color: rgb(140, 140, 140);
+    background-color: blanchedalmond;
     cursor: pointer;
     overflow:auto;
     clip-path: inset(0 round 0px 0px 50px 50px);
@@ -203,10 +203,12 @@ main{
 ul {list-style-type: none;}
 
 .month {
-    padding: 5px 5px;
-    width: 100%;
-    background: rgb(163, 13, 93);
+    flex-grow: 4;
+    font-size: 40px;
     text-align: center;
+    font-weight: bold;
+    background: #eee;
+    padding: 10px 0;
 }
 
 .month ul {
@@ -216,48 +218,66 @@ ul {list-style-type: none;}
 
 .month ul li {
     color: white;
-    font-size: 25px;
+    font-size: 40px;
     text-transform: uppercase;
     letter-spacing: 3px;
 }
 
-.weekdays {
-    margin: 0;
-    padding: 10px 0;
-    background-color: #ddd;
-    display:flex;
-    flex-direction: row;
-}
-
-.weekdays li {
-    display: inline-block;
-    width: 13.6%;
-    color: #666;
-    text-align: center;
-    font-size:25px;
-}
-
-.days {
-    padding: 10px 0;
-    background: #eee;
-    margin: 0;
+.months-container{
     display:flex;
     flex-direction: row;
     /* grid-auto-rows: 1fr; */
     flex-wrap: wrap;
-    font-size: 80px;
+}
+
+.days {
+    flex-grow: 4;
+    font-size: 60px;
+    font-weight:bold;
+    text-align: center;
+    background: #eee;
+
+    padding: 10px 0;
+}
+
+.days-container{
+    display:flex;
+    flex-direction: row;
+    /* grid-auto-rows: 1fr; */
+    flex-wrap: wrap;
 }
 
 .prev, .next{
     font-size:80px;
-    /* color:red; */
-    padding: 16px;
+    padding: 0px 30px;
+    color: rgb(163, 13, 93);
 }
+/* .prev.d{
+    position:absolute;
+    top:0px;
+
+}
+.prev.m{
+    position:absolute;
+    top:200px;
+}
+.next.d{
+    position:absolute;
+    top:0px;
+    right:0px;
+}
+.next.m{
+    position:absolute;
+    top:200px;
+    right:0px;
+} */
+
 .prev:hover, .next:hover {
-    background-color: rgba(255, 137, 137, 0.8);
+    background-color: royalblue;
+    color:white;
   }
 
-.days li {
+/* .days li {
     list-style-type: none;
     display: inline-block;
     width: 13.6%;
@@ -271,7 +291,7 @@ ul {list-style-type: none;}
     padding: 5px;
     background: royalblue;
     color: white !important
-}
+} */
 
 /* scanning */
 .scannerimg{

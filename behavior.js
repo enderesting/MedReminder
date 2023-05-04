@@ -179,17 +179,16 @@ function plusSlides(n,elemName) {
     if (elemName == "month"){
         updateMonths(monthsIndex+=n);
     }
+    updateDatename();
 }
 
-// // Thumbnail image controls
-// function currentSlide(n,elemName) {
-//     if (elemName == "days"){
-//         updateDays(daysIndex=n);
-//     }
-//     if (elemName == "month"){
-//         updateMonths(monthsIndex=n);
-//     }
-// }
+function updateDatename(){
+    let slides = document.getElementsByClassName("month");
+    weekDay = getDayFromDate(daysIndex,monthsIndex-1,yearIndex);
+    
+    console.log (slides[monthsIndex-1].textContent + " " + daysIndex + " " + weekDay);
+    datename = slides[monthsIndex-1].textContent + " " + daysIndex + " " + weekDay;
+}
 
 function updateDays(n) {
     let i;
@@ -282,6 +281,7 @@ function pop_reminder() {
     if (reminder == null) {
         alert("No reminders.");
     } else
-        if (confirm("Take reminder:\n" + reminder.querySelector("#text")))
+        // if (confirm("Take reminder:\n" + reminder.querySelector("#text")))
+        if (confirm("Reminder:\n" + "9:00   Take Prozac"))
             reminder.firstChild.firstChild.checked = true;
 }
