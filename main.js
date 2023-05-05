@@ -8,18 +8,6 @@ var datename = document.querySelector('.datename');
 var ul = document.getElementById("ul");
 var cButton = document.getElementById("calendarButton");
 
-function calendarToggle() {
-
-    cButton.classList.toggle('rotate');
-    if (calendar.style.display == "block") {
-        calendar.style.display = "none";
-        reminders.style.display = "block";
-    } else {
-        calendar.style.display = "block";
-        reminders.style.display = "none";
-    }
-    // alert("AAA");
-}
 urlParams = new URLSearchParams(window.location.search);
 
 window.onload = function () {
