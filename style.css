@@ -259,6 +259,17 @@ main{
       } 
   
 /* calendar */
+#realtime{
+    text-align: center;
+    padding: 10px;
+    font-size: 80px;
+}
+.year{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 40px;
+}
+
 #calendar{
     position: relative;
     display: none;
